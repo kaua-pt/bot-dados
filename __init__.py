@@ -7,13 +7,27 @@ class MyClient(discord.Client):
         print("Nome do bot: {0}!".format(self.user))
 
     async def on_message(self, message):
-        print("{0.author}: {0.content}".format(message))
+        try:
+            print("{0.author}: {0.content}".format(message))
 
-        mensagem = message.content.split(" ")
+            mensagem = message.content.split(" ")
 
-        valores = Separar.Verificar_Lista(mensagem, mensagem)
+            valores = Separar.Verificar_Lista(mensagem)
+            print("Valores principais: ", valores)
+            combinacao = "".join(str(valores[:-1]))
 
-        await message.channel.send(f"{valores}")
+            if len(valores) == 2:
+                await message.channel.send(f"Você tirou um {valores[0]} no dado")
+
+            else:
+                await message.channel.send(
+                    f"Você tirou um {valores[-1]} no dado com : {''.join(combinacao)}"
+                )
+
+            print("____________________________________")
+
+        except AttributeError:
+            pass
 
 
 client = MyClient()

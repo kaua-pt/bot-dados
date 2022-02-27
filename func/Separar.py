@@ -2,19 +2,25 @@ from func.Dados import Dados
 
 
 class Separar:
-    def Verificar_Lista(self, minhaLista):
+    def Verificar_Lista(minhaLista):
 
-        print("Dentro da função")
-        print(minhaLista)
+        print("Dentro da função", minhaLista)
 
         if minhaLista[0] == "=d":
             try:
-                segundaLista = Dados.Jogar(minhaLista[1:4], minhaLista[1:4])
+                print("Condicional 1 :", minhaLista)
+                segundaLista = Dados.Jogar(minhaLista[1:5])
                 print("Retornando Segunda lista")
                 return segundaLista
 
             except IndexError:
-                segundaLista = Dados.Jogar(minhaLista[1:2], minhaLista[1:4])
+
+                print("Excessão :", minhaLista)
+                segundaLista = Dados.Jogar(minhaLista[1:2])
 
                 print("Retornando Segunda lista")
                 return segundaLista
+        else:
+            print("____________________________________")
+            print("Mensagem não referente ao Bot ou um Erro")
+            pass
