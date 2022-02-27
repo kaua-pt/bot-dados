@@ -1,5 +1,7 @@
 import discord
+import os
 from func.Separar import Separar
+from func.Formatar import Formatar
 
 
 class MyClient(discord.Client):
@@ -14,19 +16,29 @@ class MyClient(discord.Client):
 
             valores = Separar.Verificar_Lista(mensagem)
             print("Valores principais: ", valores)
-            combinacao = "".join(str(valores[:-1]))
 
-            if len(valores) == 2:
-                await message.channel.send(f"Você tirou um {valores[0]} no dado")
+            if type(valores) == str:
+                await message.channel.send(
+                    f"{message.author.mention}{os.linesep}Você: {valores}"
+                )
+
+            elif len(valores) == 2:
+                combinacao = "  ".join(Formatar.formatar(valores))
+                await message.channel.send(
+                    f"{message.author.mention}{os.linesep}Resultado: {valores[0]}"
+                )
 
             else:
+                combinacao = "  ".join(Formatar.formatar(valores))
                 await message.channel.send(
-                    f"Você tirou um {valores[-1]} no dado com : {''.join(combinacao)}"
+                    f"{message.author.mention}{os.linesep}Resultado: {valores[-1]} {os.linesep}Combinação: {combinacao[:-2]}"
                 )
 
             print("____________________________________")
 
         except AttributeError:
+            pass
+        except TypeError:
             pass
 
 

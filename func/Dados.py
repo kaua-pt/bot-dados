@@ -16,6 +16,7 @@ class Dados:
 
             print("Retornando valores: ", listaRetorno)
             soma = sum(listaRetorno)
+
             if valores[0] != 1:
                 listaRetorno.append(soma)
             return listaRetorno
