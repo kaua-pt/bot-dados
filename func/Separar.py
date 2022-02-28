@@ -1,5 +1,6 @@
-from func.Dados import Dados
-from func.Moeda import Moeda
+from func.Jogadas.Dadoslen2 import Dadoslen2
+from func.Jogadas.Dadoslen4 import Dadoslen4
+from func.Jogadas.Moeda import Moeda
 
 
 class Separar:
@@ -8,24 +9,25 @@ class Separar:
         print("Dentro da função", minhaLista)
 
         if minhaLista[0] == "=d":
-            try:
-                if minhaLista[1] == "m":
-                    print("Indo para a moeda")
-                    resultado = Moeda.moeda()
-                    return resultado
+            if minhaLista[1] == "m":
+                print("Indo para a moeda")
+                resultado = Moeda.moeda()
+                return resultado
 
-                else:
+            else:
+                if len(minhaLista) > 3:
                     print("Condicional 1 :", minhaLista)
-                    segundaLista = Dados.Jogar(minhaLista[1:5])
+                    segundaLista = Dadoslen4.Jogar(minhaLista[1:5])
+                    print("Lista retornada: ", segundaLista)
                     print("Retornando Segunda lista")
                     return segundaLista
 
-            except IndexError:
-                print("Excessão :", minhaLista)
-                segundaLista = Dados.Jogar(minhaLista[1:2])
+                else:
+                    print("Excessão :", minhaLista)
+                    segundaLista = Dadoslen2.Jogar(minhaLista[1:3])
 
-                print("Retornando Segunda lista")
-                return segundaLista
+                    print("Retornando Segunda lista")
+                    return segundaLista
 
         else:
             print("____________________________________")
