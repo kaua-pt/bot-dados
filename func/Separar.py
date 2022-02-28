@@ -23,25 +23,20 @@ class Separar:
             # Moeda
             if minhaLista[1] == "m":
                 print("Indo para a moeda")
-                resultado = Moeda.moeda()
-                return resultado
+                return Moeda.moeda()
 
             else:
                 # Dado com operação
                 if len(minhaLista) > 3:
                     print("Condicional 1 :", minhaLista)
-                    segundaLista = Dadoslen4.Jogar(minhaLista[1:5])
-                    print("Lista retornada: ", segundaLista)
                     print("Retornando Segunda lista")
-                    return segundaLista
+                    return Dadoslen4.Jogar(minhaLista[1:5])
 
                 # Dado sem operação
                 else:
                     print("Excessão :", minhaLista)
-                    segundaLista = Dadoslen2.Jogar(minhaLista[1:3])
-
                     print("Retornando Segunda lista")
-                    return segundaLista
+                    return Dadoslen2.Jogar(minhaLista[1:3])
 
         else:
             print("____________________________________")

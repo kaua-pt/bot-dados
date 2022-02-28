@@ -54,12 +54,8 @@ class MyClient(discord.Client):
             # Dividir a mensagem recebida, afim de facilitar o processamento da mesma
             mensagem = message.content.split(" ")
 
-            # Verifica se a mensagem foi de fato uma chamada para o bot
-            valores = Separar.Verificar_Lista(mensagem)
-            print("Valores principais: ", valores)
-
             # Imprime a mensagem
-            await imp.Imprimir.chat(message, valores)
+            await imp.Imprimir.chat(message, Separar.Verificar_Lista(mensagem))
 
         except AttributeError:
             pass

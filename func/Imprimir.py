@@ -19,6 +19,8 @@ class Imprimir:
 
     async def chat(message, valores):
 
+        print("Valores principais: ", valores)
+
         print("Dentro da função assincrona")
 
         # Caso seja uma string, teremos que o usuário quer a função moeda

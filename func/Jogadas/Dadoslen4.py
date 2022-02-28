@@ -23,6 +23,7 @@ class Dadoslen4:
                 listaRetorno.append(numeroDado)
 
             listaSomada = sum(listaRetorno)
+
             listaRetorno.append(int(valores[3]))
 
             # Realiza a conta das strings: Método eval()
