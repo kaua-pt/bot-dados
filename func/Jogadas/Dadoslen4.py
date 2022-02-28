@@ -2,6 +2,16 @@ import random
 
 
 class Dadoslen4:
+
+    """Dados com operações aritméticas.
+        Dado no qual é realizado operações aritméticas como soma, subtração
+    Multiplicação e divisão caso necessário.
+
+        Método:
+        Jogar(valores): Realiza a operação aleatória, Retornando uma lista com
+    todos os valores que foram usados nas operações e a soma dos mesmos.
+    """
+
     def Jogar(valores):
 
         listaRetorno = []
@@ -15,6 +25,7 @@ class Dadoslen4:
             listaSomada = sum(listaRetorno)
             listaRetorno.append(int(valores[3]))
 
+            # Realiza a conta das strings: Método eval()
             soma = eval(str(listaSomada) + valores[2] + valores[3])
 
             listaRetorno.append(soma)

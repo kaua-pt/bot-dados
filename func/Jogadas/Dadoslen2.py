@@ -2,6 +2,15 @@ import random
 
 
 class Dadoslen2:
+
+    """Dados sem operações aritméticas.
+        É jogado um dado puro pela função random.
+
+        Método:
+        Jogar(valores): Realiza a operação aleatória, Retornando uma lista com
+    todos os valores que foram usados e a soma dos mesmos.
+    """
+
     def Jogar(valores):
 
         print("Função dado :", valores)
